@@ -22,10 +22,24 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ThoughtList
-              thoughts={thoughts}
-              title=""
-            />
+            <>
+              <div className="mb-5">
+                <h2>Pending Tasks</h2>
+                <ThoughtList
+                  thoughts={thoughts}
+                  title=""
+                  showCompleted={false}
+                />
+              </div>
+              <div>
+                <h2>Completed Tasks</h2>
+                <ThoughtList
+                  thoughts={thoughts}
+                  title=""
+                  showCompleted={true}
+                />
+              </div>
+            </>
           )}
         </div>
       </div>

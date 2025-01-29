@@ -13,6 +13,7 @@ const typeDefs = `
     thoughtAuthor: String
     createdAt: String
     comments: [Comment]!
+    completed: Boolean
   }
 
   type Comment {
@@ -43,6 +44,7 @@ const typeDefs = `
     removeThought(thoughtId: ID!): Thought
     removeComment(thoughtId: ID!, commentId: ID!): Thought
     toggleThoughtCompletion(thoughtId: ID!): Thought
+    deleteThought(thoughtId: ID!): Thought
   }
 `;
 
