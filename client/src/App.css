@@ -361,7 +361,7 @@ body {
     'Segoe UI Symbol';
   font-size: 16px;
   color: #1a1a1a;
-  background-color: #7C83BC;
+  background-color: #c3d9ff;
 }
 
 h1,
@@ -424,12 +424,12 @@ button {
 }
 
 a {
-  color: #7C83BC;
+  color: navy;
   text-decoration: none;
 }
 
 a:hover {
-  color: #7C83BC;
+  color: navy;
   text-decoration: underline;
 }
 
@@ -921,7 +921,7 @@ a:hover {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: #2d3e50 !important;
+  background-color: cornflowerblue !important;
 }
 
 .bg-info {
@@ -933,11 +933,11 @@ a:hover {
 }
 
 .bg-light {
-  background-color: #d9e9e8 !important;
+  background-color: #ffffff !important;
 }
 
 .bg-dark {
-  background-color: #1a1a1a !important;
+  background-color: #57779a !important;
 }
 
 .bg-white {
@@ -1013,7 +1013,7 @@ a:hover {
 }
 
 .btn.btn-primary {
-  background-color: #2d3e50;
+  background-color: #57779a;
   color: #d9e9e8;
 }
 

@@ -12,6 +12,7 @@ const Header = () => {
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyiSl-bHrLGPMpgLgK2ZI4RUogb00eeFfrEw&s" alt="Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
             <h1 className="m-0">Umbrella Task Manager</h1>
           </Link>
           <p className="m-0">Best way to manage your tasks.</p>
