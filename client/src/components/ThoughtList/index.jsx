@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import { TOGGLE_THOUGHT_COMPLETION } from '../../utils/mutations';
+import { TOGGLE_THOUGHT_COMPLETION, DELETE_THOUGHT } from '../../utils/mutations';
 import { QUERY_THOUGHTS } from '../../utils/queries';
 
 const ThoughtList = ({
@@ -11,6 +11,10 @@ const ThoughtList = ({
   showCompleted = false,
 }) => {
   const [toggleCompletion] = useMutation(TOGGLE_THOUGHT_COMPLETION, {
+    refetchQueries: [{ query: QUERY_THOUGHTS }],
+  });
+
+  const [deleteThought] = useMutation(DELETE_THOUGHT, {
     refetchQueries: [{ query: QUERY_THOUGHTS }],
   });
 
@@ -29,6 +33,16 @@ const ThoughtList = ({
       });
     } catch (err) {
       console.error('Error toggling completion:', err);
+    }
+  };
+
+  const handleDelete = async (thoughtId) => {
+    try {
+      await deleteThought({
+        variables: { thoughtId },
+      });
+    } catch (err) {
+      console.error('Error deleting thought:', err);
     }
   };
 
@@ -72,6 +86,15 @@ const ThoughtList = ({
             >
               {thought.completed ? 'Mark as Incomplete' : 'Mark as Complete'}
             </button>
+            
+            {showCompleted && (
+              <button
+                className="btn btn-danger btn-block"
+                onClick={() => handleDelete(thought._id)}
+              >
+                Delete Task
+              </button>
+            )}
           </div>
         ))}
     </div>

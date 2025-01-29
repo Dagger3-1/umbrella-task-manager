@@ -63,3 +63,11 @@ export const TOGGLE_THOUGHT_COMPLETION = gql`
     }
   }
 `;
+
+export const DELETE_THOUGHT = gql`
+  mutation deleteThought($thoughtId: ID!) {
+    deleteThought(thoughtId: $thoughtId) {
+      _id
+    }
+  }
+`;

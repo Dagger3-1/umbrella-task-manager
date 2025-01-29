@@ -123,6 +123,21 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    deleteThought: async (parent, { thoughtId }, context) => {
+      if (context.user) {
+        const thought = await Thought.findOneAndDelete({
+          _id: thoughtId,
+          thoughtAuthor: context.user.username,
+        });
+
+        if (!thought) {
+          throw new Error('Thought not found or unauthorized');
+        }
+
+        return thought;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
   },
 };
 
