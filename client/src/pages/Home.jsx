@@ -18,30 +18,28 @@ const Home = () => {
         >
           <ThoughtForm />
         </div>
-        <div className="col-12 col-md-8 mb-3">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <>
-              <div className="mb-5">
-                <h2>Pending Tasks</h2>
-                <ThoughtList
-                  thoughts={thoughts}
-                  title=""
-                  showCompleted={false}
-                />
-              </div>
-              <div>
-                <h2>Completed Tasks</h2>
-                <ThoughtList
-                  thoughts={thoughts}
-                  title=""
-                  showCompleted={true}
-                />
-              </div>
-            </>
-          )}
-        </div>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <div className="row">
+            <div className="col-12 col-md-6 mb-3">
+              <h2 className="text-center">Pending Tasks</h2>
+              <ThoughtList
+                thoughts={thoughts}
+                title=""
+                showCompleted={false}
+              />
+            </div>
+            <div className="col-12 col-md-6 mb-3">
+              <h2 className="text-center">Completed Tasks</h2>
+              <ThoughtList
+                thoughts={thoughts}
+                title=""
+                showCompleted={true}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </main>
   );

@@ -25,16 +25,21 @@ const Signup = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+    console.log('Form submitted:', formState);
 
     try {
       const { data } = await addUser({
         variables: { ...formState },
       });
 
+      console.log('Signup successful:', data);
       Auth.login(data.addUser.token);
     } catch (e) {
-      console.error(e);
+      console.error('Signup error:', e);
+      setFormState({
+        ...formState,
+        password: ''
+      });
     }
   };
 
