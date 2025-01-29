@@ -13,6 +13,7 @@ const typeDefs = `
     thoughtAuthor: String
     createdAt: String
     comments: [Comment]!
+    completed: Boolean
   }
 
   type Comment {

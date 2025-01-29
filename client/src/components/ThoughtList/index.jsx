@@ -1,20 +1,42 @@
 import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { TOGGLE_THOUGHT_COMPLETION } from '../../utils/mutations';
+import { QUERY_THOUGHTS } from '../../utils/queries';
 
 const ThoughtList = ({
   thoughts,
   title,
   showTitle = true,
   showUsername = true,
+  showCompleted = false,
 }) => {
-  if (!thoughts.length) {
-    return <h3>No tasks Yet</h3>;
+  const [toggleCompletion] = useMutation(TOGGLE_THOUGHT_COMPLETION, {
+    refetchQueries: [{ query: QUERY_THOUGHTS }],
+  });
+
+  const filteredThoughts = thoughts.filter(
+    (thought) => thought.completed === showCompleted
+  );
+
+  if (!filteredThoughts.length) {
+    return <h3>{showCompleted ? 'No Completed Tasks' : 'No Pending Tasks'}</h3>;
   }
+
+  const handleToggleCompletion = async (thoughtId) => {
+    try {
+      await toggleCompletion({
+        variables: { thoughtId },
+      });
+    } catch (err) {
+      console.error('Error toggling completion:', err);
+    }
+  };
 
   return (
     <div>
       {showTitle && <h3>{title}</h3>}
-      {thoughts &&
-        thoughts.map((thought) => (
+      {filteredThoughts &&
+        filteredThoughts.map((thought) => (
           <div key={thought._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
               {showUsername ? (
@@ -46,7 +68,7 @@ const ThoughtList = ({
             </Link>
             <button
               className="btn btn-secondary btn-block"
-              onClick={() => toggleCompletion(thought._id)}
+              onClick={() => handleToggleCompletion(thought._id)}
             >
               {thought.completed ? 'Mark as Incomplete' : 'Mark as Complete'}
             </button>
