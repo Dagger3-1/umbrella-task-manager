@@ -114,6 +114,15 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    toggleThoughtCompletion: async (parent, { thoughtId }, context) => {
+      if (context.user) {
+        const thought = await Thought.findOne({ _id: thoughtId });
+        thought.completed = !thought.completed; // Toggle completion status
+        await thought.save();
+        return thought;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
   },
 };
 

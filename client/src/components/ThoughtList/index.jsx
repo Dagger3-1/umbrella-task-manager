@@ -44,6 +44,12 @@ const ThoughtList = ({
             >
               Join the discussion on this Task.
             </Link>
+            <button
+              className="btn btn-secondary btn-block"
+              onClick={() => toggleCompletion(thought._id)}
+            >
+              {thought.completed ? 'Mark as Incomplete' : 'Mark as Complete'}
+            </button>
           </div>
         ))}
     </div>

@@ -38,6 +38,10 @@ const thoughtSchema = new Schema({
       },
     },
   ],
+  completed: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const Thought = model('Thought', thoughtSchema);

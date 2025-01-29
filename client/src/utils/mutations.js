@@ -54,3 +54,12 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const TOGGLE_THOUGHT_COMPLETION = gql`
+  mutation toggleThoughtCompletion($thoughtId: ID!) {
+    toggleThoughtCompletion(thoughtId: $thoughtId) {
+      _id
+      completed
+    }
+  }
+`;

@@ -42,6 +42,7 @@ const typeDefs = `
     addComment(thoughtId: ID!, commentText: String!): Thought
     removeThought(thoughtId: ID!): Thought
     removeComment(thoughtId: ID!, commentId: ID!): Thought
+    toggleThoughtCompletion(thoughtId: ID!): Thought
   }
 `;
 
