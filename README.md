@@ -1,156 +1,138 @@
-# Umbrella-task-manager
+# Umbrella Task Manager
 
-## Table of Contents
+A full-stack MERN (MongoDB, Express.js, React, Node.js) task management application with GraphQL integration.
 
-- [Features](#features)
-- [Tools and Technologies](#tools-and-technologies)
-- [Dependencies](#dependencies)
-- [Dev-dependencies](#dev-dependencies)
-- [Prerequisites](#prerequisites)
-- [Installation and setup](#installation-and-setup)
-- [Backend API](#backend-api)
-- [frontend pages](#frontend-pages)
-- [npm scripts](#npm-scripts)
-- [Useful Links](#useful-links)
-- [Contact](#contact)
+## Description
+
+Umbrella Task Manager is a modern web application that helps users organize and track their tasks efficiently. It features user authentication, real-time task updates, and a clean, intuitive interface.
 
 ## Features
 
-### User-side features
+- User authentication (signup/login)
+- Create, read, update, and delete tasks
+- Mark tasks as complete/incomplete
+- Add comments to tasks
+- Real-time updates using GraphQL
+- Responsive design for all devices
+- Secure password hashing
+- JWT token authentication
 
-- Signup
-- Login
-- Logout
-- Add tasks
-- View tasks
-- Update tasks
-- Delete tasks
+## Technologies Used
 
-### Developer-side features
+### Frontend
+- React.js
+- Apollo Client
+- React Router DOM
+- Vite
+- JWT Decode
+- GraphQL
 
-- Toasts for success and error messages
-- Form validations in frontend and backend
-- Fully Responsive Navbar
-- Token based Authentication
-- Use of 404 page for wrong urls
-- Relevant redirects
-- Global user state using Redux
-- Custom Loaders
-- Use of layout component for pages
-- Use of theme colors
-- No external CSS files needed (made using Tailwind CSS)
-- Usage of Tooltips
-- Dynamic document titles
-- Redirect to previous page after login
-- Use of various React hooks
-- Custom hook also used (useFetch)
-- Routes protection
-- Middleware for verifying the user in backend
-- Use of different HTTP status codes for sending responses
-- Standard pratices followed
-
-## Tools and Technologies
-
-- HTML
-- CSS
-- Javascript
-- Tailwind CSS
+### Backend
 - Node.js
 - Express.js
-- React
-- Redux
-- Mongodb
+- MongoDB
+- Mongoose
+- Apollo Server
+- GraphQL
+- JSON Web Token
+- bcryptjs
 
-## Dependencies
+## Installation
 
-Following are the major dependencies of the project:
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/umbrella-task-manager.git
+```
 
-- axios
-- react
-- react-dom
-- react-redux
-- react-router-dom
-- react-toastify
-- redux
-- redux-thunk
-- bcrypt
-- cors
-- dotenv
-- express
-- jsonwebtoken
-- mongoose
+2. Install dependencies for both client and server:
+```bash
+npm install
+cd client && npm install
+cd ../server && npm install
+```
 
-## Dev-dependencies
+3. Create a `.env` file in the root directory and add your MongoDB URI:
+```
+MONGODB_URI=your_mongodb_uri
+```
 
-Following are the major dev-dependencies of the project:
+4. Start the development server:
+```bash
+npm run develop
+```
 
-- nodemon
-- concurrently
+## Usage
 
-## Prerequisites
+1. Register a new account or login with existing credentials
+2. Create new tasks using the task form
+3. View all tasks on the homepage
+4. Mark tasks as complete/incomplete
+5. Add comments to tasks
+6. View completed tasks in a separate section
+7. Delete tasks when no longer needed
 
-- Node.js must be installed on the system.
-- You should have a MongoDB database.
-- You should have a code editor (preferred: VS Code)
+## Scripts
 
-## Installation and Setup
+- `npm run develop`: Runs both client and server in development mode
+- `npm run build`: Builds the client for production
+- `npm start`: Starts the production server
+- `npm run seed`: Seeds the database with sample data
 
-1. Install all the dependencies
+## Project Structure
 
-   ```sh
-   npm run install-all
-   ```
+```
+umbrella-task-manager/
+├── client/                 # Frontend React application
+│   ├── src/
+│   ├── public/
+│   └── package.json
+├── server/                 # Backend Node.js application
+│   ├── config/
+│   ├── models/
+│   ├── schemas/
+│   ├── utils/
+│   └── package.json
+└── package.json
+```
 
-2. Create a file named ".env" inside the backend folder. Add data from .env.example file and substitute your credentials there.
+## API Documentation
 
-3. Start the application
+The application uses GraphQL for API interactions. Main queries and mutations include:
 
-   ```sh
-   npm run dev
-   ```
+### Queries
+- `thoughts`: Get all tasks
+- `thought`: Get a single task
+- `me`: Get current user data
 
-4. Go to http://localhost:3000
+### Mutations
+- `addUser`: Create new user account
+- `login`: Authenticate user
+- `addThought`: Create new task
+- `toggleThoughtCompletion`: Toggle task completion status
+- `deleteThought`: Remove a task
+- `addComment`: Add comment to a task
 
-## Backend API
+## Contributing
 
-<pre>
-- POST     /api/auth/signup
-- POST     /api/auth/login
-- GET      /api/tasks
-- GET      /api/tasks/:taskId
-- POST     /api/tasks
-- PUT      /api/tasks/:taskId
-- DELETE   /api/tasks/:taskId
-- GET      /api/profile
-</pre>
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Frontend pages
+## License
 
-<pre>
-- /                 Home Screen (Public home page for guests and private dashboard (tasks) for logged-in users)
-- /signup           Signup page
-- /login            Login page
-- /tasks/add        Add new task
-- /tasks/:taskId    Edit a task
-</pre>
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## npm scripts
+## Contact
 
-At root:
+Your Name - [your.email@example.com](mailto:your.email@example.com)
 
-- `npm run dev`: Starts both backend and frontend
-- `npm run dev-server`: Starts only backend
-- `npm run dev-client`: Starts only frontend
-- `npm run install-all`: Installs all dependencies and dev-dependencies required at root, at frontend and at backend.
+Project Link: [https://github.com/yourusername/umbrella-task-manager](https://github.com/yourusername/umbrella-task-manager)
 
-Inside frontend folder:
+## Acknowledgments
 
-- `npm start`: Starts frontend in development mode
-- `npm run build`: Builds the frontend for production to the build folder
-- `npm test`: Launches the test runner in the interactive watch mode
-- `npm run eject`: This will remove the single build dependency from the frontend.
-
-Inside backend folder:
-
-- `npm run dev`: Starts backend using nodemon.
-- `npm start`: Starts backend without nodemon.
+- [React Documentation](https://reactjs.org/)
+- [Apollo GraphQL](https://www.apollographql.com/)
+- [MongoDB Documentation](https://docs.mongodb.com/)
+- [Express.js](https://expressjs.com/)
