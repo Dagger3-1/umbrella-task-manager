@@ -15,16 +15,16 @@ const Footer = () => {
           </button>
         )}
         <h4>
-          Made with{' '}
+          Made by{' '}
           <span
             className="emoji"
             role="img"
             aria-label="heart"
             aria-hidden="false"
           >
-            ❤️
+            
           </span>{' '}
-          by the Umbrella Task team.
+         the Umbrella Task team.
         </h4>
       </div>
     </footer>
