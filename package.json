@@ -15,10 +15,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^8.2.0"
+    "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3"
   }
 }
