@@ -1,9 +1,13 @@
 services:
   - type: web
-    name: your-app-name
+    name: umbrella-task-manager
     env: node
-    buildCommand: npm run render-build
-    startCommand: npm start
+    buildCommand: cd server && npm install && npm run build && cd ../client && npm install && npm run build
+    startCommand: cd server && npm start
     envVars:
       - key: NODE_VERSION
-        value: 16.20.0 
+        value: 18.x
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false 
