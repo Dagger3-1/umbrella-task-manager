@@ -1,42 +1,42 @@
 [
   {
-    "thoughtText": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
+    "thoughtText": "Create an optimized pathfinding system for non-player characters (NPCs) to navigate the game world efficiently.",
     "thoughtAuthor": "Brian Kernighan"
   },
   {
-    "thoughtText": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.",
+    "thoughtText": "Reach the rank of Lord for Spider-Man in Marvel Rivals.",
     "thoughtAuthor": "Max Kanat-Alexander"
   },
   {
-    "thoughtText": "When you don't create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.",
+    "thoughtText": "Debug the collision detection algorithm to ensure characters don't walk through walls..",
     "thoughtAuthor": "Why The Lucky Stiff"
   },
   {
-    "thoughtText": "I'm not a great programmer; I'm just a good programmer with great habits.",
+    "thoughtText": "Implement a new game mechanic that allows players to craft items using resources gathered throughout the game.",
     "thoughtAuthor": "Kent Beck"
   },
   {
-    "thoughtText": "Walking on water and developing software from a specification are easy if both are frozen.",
+    "thoughtText": "Develop a user-friendly interface for the game's inventory management system.",
     "thoughtAuthor": "Edward V. Berard"
   },
   {
-    "thoughtText": "The most disastrous thing that you can ever learn is your first programming language.",
+    "thoughtText": "Optimize the rendering process to improve frame rates and reduce lag during gameplay.",
     "thoughtAuthor": "Alan Kay"
   },
   {
-    "thoughtText": "The most important property of a program is whether it accomplishes the intention of its user.",
+    "thoughtText": "Write unit tests for the new features added in the latest game update to ensure they function as intended.",
     "thoughtAuthor": "C.A.R. Hoare"
   },
   {
-    "thoughtText": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
+    "thoughtText": "Integrate online multiplayer functionality, including matchmaking and server management.",
     "thoughtAuthor": "David Thomas"
   },
   {
-    "thoughtText": "If you optimize everything, you will always be unhappy.",
+    "thoughtText": "Design and implement a save system that allows players to save and load their progress seamlessly.",
     "thoughtAuthor": "Donald Knuth"
   },
   {
-    "thoughtText": "It's not a bug; it's an undocumented feature.",
+    "thoughtText": "Create a dynamic audio system that adjusts background music and sound effects based on in-game events and player actions.",
     "thoughtAuthor": "Lernantino"
   }
 ]
