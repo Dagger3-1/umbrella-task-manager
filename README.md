@@ -41,7 +41,7 @@ Umbrella Task Manager is a modern web application that helps users organize and 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/umbrella-task-manager.git
+git clone https://github.com/Dagger3-1/umbrella-task-manager.git
 ```
 
 2. Install dependencies for both client and server:
@@ -128,7 +128,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Your Name - [your.email@example.com](mailto:your.email@example.com)
 
-Project Link: [https://github.com/yourusername/umbrella-task-manager](https://github.com/yourusername/umbrella-task-manager)
+Project Link: [https://github.com/Dagger3-1/umbrella-task-manager.git]
+Render Link: [https://umbrella-task-manager-kfcd.onrender.com/]
 
 ## Acknowledgments
 
